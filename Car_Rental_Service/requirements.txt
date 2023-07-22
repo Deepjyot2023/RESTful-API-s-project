@@ -1,0 +1,6 @@
+python == 3.10.11
+django == 3.2
+mysqlclient == 2.1.1
+
+
+

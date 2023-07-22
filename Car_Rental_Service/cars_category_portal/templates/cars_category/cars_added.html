@@ -1,0 +1,46 @@
+
+
+{% extends 'cars_category/base.html' %}
+{% block content %}
+{% csrf_token %}
+<div class="w3-bar w3-black w3-large">
+  <div class="w3-bar-item w3-left w3-black">Car24 Dealer Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/cars_category/logout/">Logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right " href="/cars_category/auth/">Home</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/cars_category/order_list/">Orders</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/cars_category/manage_cars/">Cars</a>
+</div>
+
+<div class="w3-display-container" style="height:300px;">
+  <div class="w3-display-middle">
+    Car Details Added! <br><br>
+    <a href="/cars_category/index/">Back To Home Page</a>
+</div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

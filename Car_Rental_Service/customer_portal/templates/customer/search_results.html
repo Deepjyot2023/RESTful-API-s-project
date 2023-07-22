@@ -1,0 +1,75 @@
+
+
+{% extends 'customer/base.html' %}
+{% block content %}
+
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black">Customer Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/logout/">Logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/manage/">Manage</a>
+  <a class="w3-ber-item w3-btn w3-teal w3-right" href="/customer_portal/search/">Search Cars</a>
+</div>
+
+<h3 class="w3-center" style="padding-top:30"><b>Search Results</b></h3>
+
+<div class="w3-center" style="padding:50px;">
+<table class="w3-table w3-striped w3-center w3-large">
+  
+
+    <tr>
+      <th style="padding:20">Car_name </th>
+      <th style="padding:20">Compact_car  </th>
+      <th style="padding:20">Premium_car </th>
+      <th style="padding:20">Minivan_car </th>
+      <th style="padding:20">capacity </th>
+      <th style="padding:20">
+      </th style="padding:20">
+    </tr>
+    {% for car in request.session.cars_list %}
+    <tr>
+      <td>{{car.Car_name}}</td>
+      <td>{{car.Compact_car}}</td>
+      <td>{{car.Premium_car}}</td>
+      <td>{{car.Minivan_car}}</td>
+      <td>{{car.capa}}</td>
+      <td><form action = "/customer_portal/rent/" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{vehicle.id}}">
+        <input class="w3-btn w3-green" type="submit" value="Rent">
+        </form></td>
+    </tr>
+
+  {% endfor %}
+  
+</table>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

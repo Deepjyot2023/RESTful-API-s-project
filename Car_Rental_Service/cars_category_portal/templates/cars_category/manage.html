@@ -1,0 +1,58 @@
+
+
+{% extends 'cars_category/base.html' %}
+{% block content %}
+<div class="w3-bar w3-black w3-large">
+  <div class="w3-bar-item w3-left w3-black">Cars24 Dealer Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/cars_category/logout/">Logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right " href="/cars_category/auth/">Home</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/cars_category/order_list/">Orders</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/cars_category/manage_cars/">Cars</a>
+</div>
+<h3 class="w3-center" style="padding-top:30"><b>Posted Cars</b></h3>
+<div style="padding:18">
+<table class="w3-table w3-striped w3-center">
+
+  <tr>
+    <th style="padding:20;">Compact_car</th>
+    <th style="padding:20;">Premium_car</th>
+    <th style="padding:20;">Minivan_car</th>
+    <th style="padding:20;">capacity</th>
+    <th style="padding:20;">phone_no</th>
+    <th style="padding:20;">price</th>
+    <th style="padding:20;">Action</th>
+  </tr>
+  {% for car in cars_list %}
+  <tr>
+      <td>{{car.Compact_car}}</td>
+      <td>{{car.Premium_car}}</td>
+      <td>{{car.Minivan_car}}</td>
+      <td>{{car.capacity}} Seat</td>
+      <td>{{car.phone_no}}</td>
+      <td>{{car.price}}</td>
+      <td><form action = "/cars_category/delete/" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{car.id}}">
+        <input class="w3-btn w3-red" type="submit" value="Delete">
+      </form></td>
+  </tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

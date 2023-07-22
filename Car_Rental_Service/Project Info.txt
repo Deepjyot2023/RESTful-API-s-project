@@ -1,0 +1,20 @@
+
+
+ ** This project includes three apps **
+    1. home 
+    2. cars_category_portal
+    3. customer_portal
+
+
+** A Car Rental Service Administration system is developed for 
+   customer that they can avail the services for cars as per categorywise on per day Rental basis. **
+
+
+** Have been used Django Admin Dashboard for CRUD operations of the services using superuser. **
+
+
+
+
+
+
+
